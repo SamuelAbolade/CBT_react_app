@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* input {
+  /* Remove Bootstrap default border styles */
+  /* border: 1px solid !important; */
+  /* box-shadow: none !important; */
+
+  /* Set Tailwind-like styles */
+  /* width: 100% !important; */
+  /* padding: 0.75rem 1rem !important; */
+  /* background-color: #edf2f7 !important; */
+  /* border-radius: 0.25rem !important; */
+  /* color: #2d3748 !important; */
+
+
+  /* Set focus styles */
+  /* outline: none !important; */
+/* } */
+
+
+/* Set focus styles */
+/* input:focus {
+  border: 2px red solid !important;
+  background-color: #fff !important;
+  border-color: #e2e8f0 !important;
+  transition: background-color .3s, border-color .3s !important;
+} */
+

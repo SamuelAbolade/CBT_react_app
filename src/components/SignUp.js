@@ -1,21 +1,55 @@
 import React from 'react'
-import styles from '../styles.module.css'
+import questions from '../questions'
+import { Input } from '@mui/joy'
+import Button from '@mui/joy/Button';
+import { CssVarsProvider } from '@mui/joy/styles';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const SignUp = () => {
+  const FORM_DATA = [
+    { type: "text", name: "email", placeholder: "Email / Examination Number" },
+    { type: "password", name: "password", placeholder: "Password" },
+  ];
+  const initialValues = {
+    email: '',
+    password: '',
+  };
 
-  const types = ["text", "email", "password"]
-  const FORM_DATA = types.map((type, i) => type)
+  const validationSchema = Yup.object({
+    email: Yup.string().required('Required').min(8),
+    // password: Yup.string().required('Required'),
+  });
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    // onSubmit: handleSubmit,
+  });
+  
+  const signIn=(e)=>{
+    e.preventDefault()
+    console.log(formik
+      );
+  }
+
   return (
     <>
-      <div className='col-10 m-auto mt-5'>
-        <h4 className={styles['color']} >Sign Up</h4>
+      <div className='col-12 col-lg-4 bg-light col-sm-6 shadow-lg rounded p-4 m-auto mt-5'>
+        <h5 className={`mt-4 text-primary`} >Sign In</h5>
         <h6 className='mb-4' >Welcome to our Examination portal, Kindly Sign Up to get started.</h6>
-        <form className='col-12 m-auto'>
-          {FORM_DATA.map((data, i) => (
-            <input key={i} type={data.type} className="form-control mt-3" />
+        <form className='m-auto' onSubmit={signIn}>
+          {FORM_DATA.map(({type, name, placeholder}, i) => (
+
+            <Input key={i} type={type} name={name} value={formik.values.name} onChange={formik.handleChange} placeholder={placeholder} className="mt-3 rounded-2" />
           ))}
-          <button className={`col-12 mt-3 btn btn-primary text-light ${styles["background"]}`}>Create Account</button>
-          <div className='text-center mt-2'><a href=":" className='m-auto text-center text-decoration-none text-dark'>Already have an account? Login</a></div> 
+          <CssVarsProvider >
+            <Button  type="submit" className='mt-3 w-100' variant="solid" color="primary">
+              Start Exam
+            </Button>
+          </CssVarsProvider>
+
+          {/* <button className={`col-12 mt-3 mb-5 btn btn-primary text-light ${styles["background"]}`}>Start Exam</button> */}
+          {/* <div className='text-center mt-2'><a href=":" className='m-auto text-center text-decoration-none text-dark'>Already have an account? Login</a></div>  */}
         </form>
       </div>
     </>
