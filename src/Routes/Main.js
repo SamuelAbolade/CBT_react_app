@@ -11,6 +11,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import QuestionOption from '../components/QuestionOption';
 import { useDispatch, useSelector } from 'react-redux';
 import { startTimer } from '../Redux/timerSlice';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 const Main = () => {
   const dispatch = useDispatch()
@@ -20,7 +21,8 @@ const Main = () => {
   const maxSteps = questions.length;
   const {timerReducer:{timeRemaining}} = useSelector((state)=>state)
   const minutes = (Math.floor(timeRemaining / 60));
-  const seconds = Math.floor(timeRemaining%60)
+  const seconds = Math.floor(timeRemaining % 60).toString().padStart(2, "0");
+
 
 
   useEffect(() => {
@@ -58,7 +60,7 @@ const Main = () => {
         <div className="container d-flex">
           <a className="navbar-brand" href="#">Navbar</a>
           <div className="d-flex justify-content-between gap-5">
-            <span className="nav-link active fw-bold" aria-current="page" >{minutes+":"+seconds}</span>
+            <span className="nav-link active fw-bold" aria-current="page" ><AccessAlarmIcon /> {minutes+":"+seconds}</span>
             <a className="nav-link" href="signup">SUBMIT</a>
           </div>
         </div>

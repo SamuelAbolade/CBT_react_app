@@ -11,12 +11,12 @@ const initialState = {
 
     reducers: {
       startTimer: (state) => {
-          state.timeRemaining = state.timeRemaining-1
-      }
-    //   stopTimer: (state) => {
-    //     clearInterval(state.timerId);
-    //     state.timerId = null;
-    //   },
+        state.timeRemaining && (state.timeRemaining = state.timeRemaining-1)
+      },
+      // stopTimer: (state) => {
+      //   clearInterval(state.timerId);
+      //   state.timerId = null;
+      // },
     //   resetTimer: (state) => {
     //     clearInterval(state.timerId);
     //     state.timerId = null;
