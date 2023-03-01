@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import questions from "../questions"
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -8,31 +8,57 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { Radio } from '@mui/material';
 import QuestionOption from '../components/QuestionOption';
+import { useDispatch, useSelector } from 'react-redux';
+import { startTimer } from '../Redux/timerSlice';
 
 const Main = () => {
-  console.log(questions);
-  const theme = useTheme();
-  console.log(theme)
+  const dispatch = useDispatch()
   const [currentQuestionIndex, setActiveStep] = React.useState(0);
+  let foundQuestion = questions[currentQuestionIndex]
+  const theme = useTheme();
   const maxSteps = questions.length;
+  const {timerReducer:{timeRemaining}} = useSelector((state)=>state)
+  const minutes = (Math.floor(timeRemaining / 60));
+  const seconds = Math.floor(timeRemaining%60)
 
-  const handleNext = () => {
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      dispatch(startTimer());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [dispatch]);
+
+
+  // console.log(minutes, seconds)
+
+    
+    // console.log("Hello")
+    
+    // return () => {
+    //   second
+    // }
+
+
+  const handleNext = (time) => {
+    console.log(dispatch);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
   
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-  let foundQuestion = questions[currentQuestionIndex]
+
+  const [timeLeft, setTimeLeft] = useState(30 * 60);
   return (
     <>
       <nav className="navbar p-3 bg-body-tertiary shadow shadow-sm">
         <div className="container d-flex">
           <a className="navbar-brand" href="#">Navbar</a>
           <div className="d-flex justify-content-between gap-5">
-            <a className="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+            <span className="nav-link active fw-bold" aria-current="page" >{minutes+":"+seconds}</span>
             <a className="nav-link" href="signup">SUBMIT</a>
           </div>
         </div>
