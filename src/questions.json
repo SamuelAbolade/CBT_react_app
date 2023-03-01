@@ -398,21 +398,5 @@
         "C": ".75",
         "D": ".90",
         "answer": "C"
-      },
-      {
-        "question": "How is 4:00 pm expressed in military time?",
-        "A": "1600",
-        "B": "004",
-        "C": "0400 ",
-        "D": "4:00",
-        "answer": "A"
-      },
-      {
-        "question": "How is the Arabic numeral for '2' written?",
-        "A": "2",
-        "B": "II",
-        "C": "I",
-        "D": "ii",
-        "answer": "A"
       }
 ]
