@@ -30,7 +30,6 @@ const QuestionOption = ({ currentQuestionIndex, foundQuestion }) => {
   return (
     <FormControl>
       <RadioGroup
-        defaultValue="femal"
         name="controlled-radio-buttons-group"
         value={selectedOptions[currentQuestionIndex]}
         onChange={handleChange}

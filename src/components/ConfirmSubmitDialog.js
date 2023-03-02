@@ -39,7 +39,7 @@ export default function ConfirmSubmitDialog() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-          Submitting will automatically end your test, Continue by clicking on Submit if you're done.
+            Submitting will automatically end your test, Continue by clicking on Submit if you're done.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

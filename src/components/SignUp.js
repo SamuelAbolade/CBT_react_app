@@ -22,6 +22,7 @@ const SignUp = () => {
     email: Yup.string().required('Required').min(8),
     password: Yup.string().required('Required'),
   });
+  console.log(validationSchema);
 
   const formik = useFormik({
     initialValues,
@@ -32,8 +33,7 @@ const SignUp = () => {
   console.log(formik.isValid);
   const signIn = (e) => {
     e.preventDefault();
-    // console.log(formik.values)
-    if (formik.isValid) {
+    if (formik.isValid && formik.dirty) {
       navigate("/MainApp")
     } else {
       console.log("Go back");
