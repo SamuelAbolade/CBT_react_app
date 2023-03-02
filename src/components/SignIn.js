@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const SignIn = ({setActiveStep}) => {
   const FORM_DATA = [
     { type: "text", name: "email", placeholder: "Email / Examination Number" },
     { type: "password", name: "password", placeholder: "Password" },
@@ -35,14 +35,15 @@ const SignUp = () => {
     e.preventDefault();
     if (formik.isValid && formik.dirty) {
       navigate("/MainApp")
+      setActiveStep(2)
     } else {
       console.log("Go back");
     }
-
   }
 
   return (
     <>
+      
       <div className='col-12 col-lg-4 bg-light col-sm-6 shadow-lg rounded p-4 m-auto mt-5'>
         <h5 className={`mt-4 text-primary`} >Sign In</h5>
         <h6 className='mb-4' >Welcome to our Examination portal, Kindly Sign Up to get started.</h6>
@@ -64,4 +65,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignIn

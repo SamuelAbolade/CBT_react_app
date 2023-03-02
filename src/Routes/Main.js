@@ -17,14 +17,18 @@ import ConfirmSubmitDialog from '../components/ConfirmSubmitDialog';
 
 const Main = () => {
   const dispatch = useDispatch()
+  const theme = useTheme();
+  const navigate = useNavigate()
+
   const [currentQuestionIndex, setActiveStep] = React.useState(0);
   let foundQuestion = questions[currentQuestionIndex]
-  const theme = useTheme();
+
   const maxSteps = questions.length;
   const { timerReducer: { timeRemaining } } = useSelector((state) => state)
+
   const minutes = (Math.floor(timeRemaining / 60));
   const seconds = Math.floor(timeRemaining % 60).toString().padStart(2, "0");
-  const navigate = useNavigate()
+  
 
 
   useEffect(() => {
@@ -33,7 +37,7 @@ const Main = () => {
     }, 1000);
     return () => {clearInterval(intervalId)
        dispatch(resetTimer())};
-    
+       
   }, [dispatch]);
 
   useEffect(() => {

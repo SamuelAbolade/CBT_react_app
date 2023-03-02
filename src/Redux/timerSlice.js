@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    timeRemaining: 1800, // 30 minutes in seconds
+    timeRemaining: 100, // 30 minutes in seconds
     timerId: null,
 };
   
