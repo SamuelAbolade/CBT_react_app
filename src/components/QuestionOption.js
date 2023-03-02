@@ -18,7 +18,6 @@ const QuestionOption = ({ currentQuestionIndex, foundQuestion }) => {
   const [value, setValue] = useState('other');
   const dispatch = useDispatch()
   const {optionReducer:{selectedOptions}} = useSelector((state)=>(state))
-  console.log(selectedOptions)
   var selectedOption
   const handleChange = (e) => {
     selectedOption = e.target.value

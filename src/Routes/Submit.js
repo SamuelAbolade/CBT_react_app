@@ -2,7 +2,7 @@ import React from 'react'
 
 const Submit = () => {
   return (
-    <div>Submit</div>
+    <div>Submitted</div>
   )
 }
 

@@ -10,9 +10,10 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import QuestionOption from '../components/QuestionOption';
 import { useDispatch, useSelector } from 'react-redux';
-import { startTimer } from '../Redux/timerSlice';
+import { resetTimer, startTimer } from '../Redux/timerSlice';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ConfirmSubmitDialog from '../components/ConfirmSubmitDialog';
 
 const Main = () => {
   const dispatch = useDispatch()
@@ -30,27 +31,17 @@ const Main = () => {
     const intervalId = setInterval(() => {
       dispatch(startTimer());
     }, 1000);
-    console.log(timeRemaining)
-    return () => clearInterval(intervalId);
+    return () => {clearInterval(intervalId)
+       dispatch(resetTimer())};
+    
   }, [dispatch]);
+
   useEffect(() => {
     timeRemaining < 1 && navigate("/Submit")
   }, [timeRemaining])
 
 
-
-  // console.log(minutes, seconds)
-
-
-  // console.log("Hello")
-
-  // return () => {
-  //   second
-  // }
-
-
   const handleNext = (time) => {
-    console.log(dispatch);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
@@ -66,7 +57,7 @@ const Main = () => {
           <a className="navbar-brand" href="#">Navbar</a>
           <div className="d-flex justify-content-between gap-5">
             <span className="nav-link active fw-bold" aria-current="page" ><AccessAlarmIcon /> {minutes + ":" + seconds}</span>
-            <a className="nav-link" href="signup">SUBMIT</a>
+            <ConfirmSubmitDialog></ConfirmSubmitDialog>
           </div>
         </div>
       </nav>
