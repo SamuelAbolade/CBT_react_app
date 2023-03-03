@@ -58,10 +58,10 @@ const Main = () => {
     <>
       <nav className="navbar p-3 bg-body-tertiary shadow shadow-sm">
         <div className="container d-flex">
-          <a className="navbar-brand" href="#">Navbar</a>
+          <a className="navbar-brand" href="#">Quizza</a>
           <div className="d-flex justify-content-between gap-5">
             <span className="nav-link active fw-bold" aria-current="page" ><AccessAlarmIcon /> {minutes + ":" + seconds}</span>
-            <ConfirmSubmitDialog></ConfirmSubmitDialog>
+            <ConfirmSubmitDialog />
           </div>
         </div>
       </nav>

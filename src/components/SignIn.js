@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 
-const SignIn = ({setActiveStep}) => {
+const SignIn = () => {
   const FORM_DATA = [
     { type: "text", name: "email", placeholder: "Email / Examination Number" },
     { type: "password", name: "password", placeholder: "Password" },
@@ -35,7 +35,6 @@ const SignIn = ({setActiveStep}) => {
     e.preventDefault();
     if (formik.isValid && formik.dirty) {
       navigate("/MainApp")
-      setActiveStep(2)
     } else {
       console.log("Go back");
     }
@@ -43,10 +42,10 @@ const SignIn = ({setActiveStep}) => {
 
   return (
     <>
-      
+
       <div className='col-12 col-lg-4 bg-light col-sm-6 shadow-lg rounded p-4 m-auto mt-5'>
         <h5 className={`mt-4 text-primary`} >Sign In</h5>
-        <h6 className='mb-4' >Welcome to our Examination portal, Kindly Sign Up to get started.</h6>
+        <h6 className='mb-4' >Kindly Sign Up to get started.</h6>
         <form className='m-auto' onSubmit={signIn}>
           {FORM_DATA.map(({ type, name, placeholder }, i) => (
             <Input key={i} type={type} name={name} value={formik.values.name} onChange={formik.handleChange} placeholder={placeholder} className="mt-3 rounded-2" />
@@ -56,9 +55,6 @@ const SignIn = ({setActiveStep}) => {
               Start Exam
             </Button>
           </CssVarsProvider>
-
-          {/* <button className={`col-12 mt-3 mb-5 btn btn-primary text-light ${styles["background"]}`}>Start Exam</button> */}
-          {/* <div className='text-center mt-2'><a href=":" className='m-auto text-center text-decoration-none text-dark'>Already have an account? Login</a></div>  */}
         </form>
       </div>
     </>

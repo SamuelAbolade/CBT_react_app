@@ -1,8 +1,19 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import questions from "../questions"
+import { resetSelectedOptions } from '../Redux/optionSlice'
+
 const Submit = () => {
   const { optionReducer: { selectedOptions } } = useSelector((state) => (state))
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(resetSelectedOptions())
+  
+    // return () => {
+    //   second
+    // }
+  }, [])
+  
   const correctScore = questions.filter((question, i) => selectedOptions[i] == question.answer)
   console.log(correctScore)
   return (

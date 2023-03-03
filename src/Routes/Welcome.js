@@ -4,14 +4,16 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import SignIn from '../components/SignIn'
+import Instructions from '../components/Instructions';
 
 
 
 export default function HorizontalLabelPositionBelowStepper() {
   const [activeStep, setActiveStep] = React.useState(1)
   const steps = [
-    <SignIn setActiveStep={setActiveStep}/>,
-    'Select master blaster campaign settings',
+    // <SignIn setActiveStep={setActiveStep}/>,
+    "Welcome",
+    'Enter Examination Details',
   ];
   return (
     <Box sx={{ width: '100%' }}>
@@ -22,6 +24,8 @@ export default function HorizontalLabelPositionBelowStepper() {
           </Step>
         ))}
       </Stepper>
+      {activeStep==2 && <SignIn />}
+      {activeStep==1 && <Instructions setActiveStep={setActiveStep}/>}
     </Box>
   );
 }

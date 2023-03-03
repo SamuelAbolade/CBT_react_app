@@ -17,8 +17,11 @@ export const optionSlice = createSlice({
             state.selectedOptions[action.payload] = state.chosenOption
             console.log(state.selectedOptions)
             console.log(action)
+        },
+        resetSelectedOptions: (state)=>{
+            (state.selectedOptions) = Array(questions.length).fill(null)
         }
     }
 })
 export default optionSlice.reducer
-export const { toggleChoice, pushToUserAnswers } = optionSlice.actions
+export const { toggleChoice, pushToUserAnswers, resetSelectedOptions } = optionSlice.actions

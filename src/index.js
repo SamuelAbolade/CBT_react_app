@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import MainRouter from './Routes/MainRouter';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
+import { CssVarsProvider } from '@mui/joy';
 
 // const theme = createMuiTheme({
 //   palette: {
@@ -29,11 +30,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <MuiThemeProvider theme={theme}> */}
-    <Provider store={store}>
-      <MainRouter>
-        <App />
-      </MainRouter>
-    </Provider>
+      <Provider store={store}>
+    {/* <CssVarsProvider> */}
+        <MainRouter>
+          <App />
+        </MainRouter>
+    {/* </CssVarsProvider> */}
+      </Provider>
     {/* </MuiThemeProvider> */}
   </React.StrictMode>
 );
