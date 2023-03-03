@@ -6,16 +6,15 @@ import { resetSelectedOptions } from '../Redux/optionSlice'
 const Submit = () => {
   const { optionReducer: { selectedOptions } } = useSelector((state) => (state))
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(resetSelectedOptions())
+  // useEffect(() => {
+  //   
   
-    // return () => {
-    //   second
-    // }
-  }, [])
+  //   // return () => {
+  //   //   second
+  //   // }
+  // }, [])
   
   const correctScore = questions.filter((question, i) => selectedOptions[i] == question.answer)
-  console.log(correctScore)
   return (
     <>
       <div>

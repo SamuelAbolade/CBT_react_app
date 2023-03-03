@@ -12,15 +12,15 @@ export default function HorizontalLabelPositionBelowStepper() {
   const [activeStep, setActiveStep] = React.useState(1)
   const steps = [
     // <SignIn setActiveStep={setActiveStep}/>,
-    "Welcome",
-    'Enter Examination Details',
+    "Instructions",
+    'Sign In',
   ];
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%' }} className="mt-5">
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel><strong>{label}</strong></StepLabel>
           </Step>
         ))}
       </Stepper>

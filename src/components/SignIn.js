@@ -43,7 +43,7 @@ const SignIn = () => {
   return (
     <>
 
-      <div className='col-12 col-lg-4 bg-light col-sm-6 shadow-lg rounded p-4 m-auto mt-5'>
+      <div className='col-12 col-lg-4 bg-lig border shadow col-sm-6  rounded p-4 py-5 m-auto mt-5'>
         <h5 className={`mt-4 text-primary`} >Sign In</h5>
         <h6 className='mb-4' >Kindly Sign Up to get started.</h6>
         <form className='m-auto' onSubmit={signIn}>

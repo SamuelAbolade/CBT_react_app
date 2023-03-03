@@ -10,10 +10,15 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import QuestionOption from '../components/QuestionOption';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetTimer, startTimer } from '../Redux/timerSlice';
+import { resetTimer, startTimer,  } from '../Redux/timerSlice';
+import { resetSelectedOptions } from '../Redux/optionSlice';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import { Link, useNavigate } from 'react-router-dom';
 import ConfirmSubmitDialog from '../components/ConfirmSubmitDialog';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
 
 const Main = () => {
   const dispatch = useDispatch()
@@ -36,7 +41,9 @@ const Main = () => {
       dispatch(startTimer());
     }, 1000);
     return () => {clearInterval(intervalId)
-       dispatch(resetTimer())};
+       dispatch(resetTimer())
+      };
+       
        
   }, [dispatch]);
 
@@ -56,15 +63,38 @@ const Main = () => {
   const [timeLeft, setTimeLeft] = useState(30 * 60);
   return (
     <>
-      <nav className="navbar p-3 bg-body-tertiary shadow shadow-sm">
-        <div className="container d-flex">
-          <a className="navbar-brand" href="#">Quizza</a>
-          <div className="d-flex justify-content-between gap-5">
-            <span className="nav-link active fw-bold" aria-current="page" ><AccessAlarmIcon /> {minutes + ":" + seconds}</span>
-            <ConfirmSubmitDialog />
+      {/* <nav className="navbar p-3 bg-body-tertiary shadow shadow-sm border border-danger">
+        <div className="container d-flex border border-danger">
+          <a className="navbar-brand border border-danger" href="#">Quizza</a>
+          <div className="d-flex justify-content-between gap-5 border border-danger">
+            <div className="mt-1 border border-danger" >
+              <AccessAlarmIcon  /> {minutes + ":" + seconds}
+            </div>
+            
           </div>
         </div>
-      </nav>
+      </nav> */}
+      <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            // color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Quizzer
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <AccessAlarmIcon  /> {minutes + ":" + seconds}
+          </Typography>
+          <ConfirmSubmitDialog />
+        </Toolbar>
+      </AppBar>
+    </Box>
       <Box className="col-10 col-lg-8 m-auto mt-5" sx={{ flexGrow: 1 }}>
         <Paper
           square

@@ -31,11 +31,11 @@ root.render(
   <React.StrictMode>
     {/* <MuiThemeProvider theme={theme}> */}
       <Provider store={store}>
-    {/* <CssVarsProvider> */}
+    {/* <CssVarsProvider>2 */}
         <MainRouter>
           <App />
         </MainRouter>
-    {/* </CssVarsProvider> */}
+    {/* </CssVarsProvider>2 */}
       </Provider>
     {/* </MuiThemeProvider> */}
   </React.StrictMode>
