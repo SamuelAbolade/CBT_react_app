@@ -10,7 +10,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import QuestionOption from '../components/QuestionOption';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetTimer, startTimer,  } from '../Redux/timerSlice';
+import { resetTimer, startTimer, } from '../Redux/timerSlice';
 import { resetSelectedOptions } from '../Redux/optionSlice';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,6 +19,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
+import { ButtonGroup } from '@mui/material';
 
 const Main = () => {
   const dispatch = useDispatch()
@@ -33,18 +34,19 @@ const Main = () => {
 
   const minutes = (Math.floor(timeRemaining / 60));
   const seconds = Math.floor(timeRemaining % 60).toString().padStart(2, "0");
-  
+
 
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       dispatch(startTimer());
     }, 1000);
-    return () => {clearInterval(intervalId)
-       dispatch(resetTimer())
-      };
-       
-       
+    return () => {
+      clearInterval(intervalId)
+      dispatch(resetTimer())
+    };
+
+
   }, [dispatch]);
 
   useEffect(() => {
@@ -75,7 +77,7 @@ const Main = () => {
         </div>
       </nav> */}
       <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+        {/* <AppBar position="static">
         <Toolbar>
           <IconButton
             size="large"
@@ -89,12 +91,26 @@ const Main = () => {
             Quizzer
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <AccessAlarmIcon  /> {minutes + ":" + seconds}
+         
           </Typography>
-          <ConfirmSubmitDialog />
+          
         </Toolbar>
-      </AppBar>
-    </Box>
+      </AppBar> */}
+        <div className='m-auto mt-4  text-center'>
+          {/* <Button variant="contained"></Button>
+          <Button variant="contained">Con</Button> */}
+          <ButtonGroup
+            disableElevation
+            variant="contained"
+            aria-label="Disabled elevation buttons"
+            
+          >
+            <Button className='p-2 rounded-0 rounded-start'><AccessAlarmIcon /> {minutes + ":" + seconds}</Button>
+            <ConfirmSubmitDialog />
+          </ButtonGroup>
+        </div>
+
+      </Box>
       <Box className="col-10 col-lg-8 m-auto mt-5" sx={{ flexGrow: 1 }}>
         <Paper
           square
