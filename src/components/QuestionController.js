@@ -5,7 +5,9 @@ import { useTheme } from '@mui/material/styles';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleNext, handleBack } from '../Redux/questionControllerSlice';
+import { handleNext, handleBack, handlePaginationChange } from '../Redux/questionControllerSlice';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 
 const QuestionController = () => {
@@ -14,45 +16,41 @@ const QuestionController = () => {
     const maxSteps = questions.length
     const theme = useTheme()
 
-    const next =()=>{
+    const next = () => {
         dispatch(handleNext())
     }
-    const back =()=>{
+    const back = () => {
         dispatch(handleBack())
+    }
+    const handleChange=(event, value)=>{
+        dispatch(handlePaginationChange(value-1))
     }
     return (
         <>
-            <MobileStepper
-                variant="text"
-                steps={maxSteps}
-                position="static"
-                activeStep={currentQuestionIndex}
-                nextButton={
-                    <Button
-                        size="small"
-                        onClick={next}
-                        disabled={currentQuestionIndex === maxSteps - 1}
-                    >
-                        Next
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowLeft />
-                        ) : (
-                            <KeyboardArrowRight />
-                        )}
-                    </Button>
-                }
-
-                backButton={
-                    <Button size="small" onClick={back} disabled={currentQuestionIndex === 0}>
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowRight />
-                        ) : (
-                            <KeyboardArrowLeft />
-                        )}
-                        Back
-                    </Button>
-                }
-            />
+        <div className='d-flex justify-content-evenly mb-3'>
+            <Button size="small" onClick={back} disabled={currentQuestionIndex === 0}>
+                {theme.direction === 'rtl' ? (
+                    <KeyboardArrowRight />
+                ) : (
+                    <KeyboardArrowLeft />
+                )}
+                Back
+            </Button>
+                <Pagination size='small' count={maxSteps} hideNextButton hidePrevButton page={currentQuestionIndex+1} siblingCount={1} onChange={handleChange} variant="outlined" shape="rounded" />
+            <Button
+                size="small"
+                onClick={next}
+                disabled={currentQuestionIndex === maxSteps - 1}
+            >
+                Next
+                {theme.direction === 'rtl' ? (
+                    <KeyboardArrowLeft />
+                ) : (
+                    <KeyboardArrowRight />
+                )}
+            </Button>
+        </div>
+            {/* /> */}
             {/* <Pagination setActiveCurrentQuestionIndex={setActiveCurrentQuestionIndex} /> */}
         </>
     )

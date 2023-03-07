@@ -17,7 +17,11 @@ const questionControllerSlice = createSlice({
         handleBack:(state) => {
             state.currentQuestionIndex = state.currentQuestionIndex-1
         },
+        handlePaginationChange: (state, action) => {
+            state.currentQuestionIndex = action.payload
+            // setPage(value);
+        }
     }
 })
-export const {handleNext, handleBack} = questionControllerSlice.actions
+export const { handleNext, handleBack, handlePaginationChange } = questionControllerSlice.actions
 export default questionControllerSlice.reducer
