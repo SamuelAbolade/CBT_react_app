@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import questions from "../questions"
-import { resetSelectedOptions } from '../Redux/optionSlice'
+import { resetSelectedOptions } from '../Redux/optionControllerSlice'
 
 const Submit = () => {
   const { optionReducer: { selectedOptions } } = useSelector((state) => (state))

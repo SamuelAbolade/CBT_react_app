@@ -25,7 +25,7 @@ export default function ConfirmSubmitDialog() {
 
   return (
     <div>
-      <Button variant="contained" className='p-2 rounded-0 rounded-end' onClick={handleClickOpen}>
+      <Button variant="contained" className='p-2 px-4 rounded-0 rounded-end' onClick={handleClickOpen}>
         Submit
       </Button>
       <Dialog
