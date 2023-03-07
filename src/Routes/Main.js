@@ -7,13 +7,13 @@ import AppBar from '../components/AppBar';
 import CurrentQuestion from '../components/CurrentQuestion';
 import QuestionOption from '../components/QuestionOption';
 import QuestionController from '../components/QuestionController';
+import TopNav from '../components/TopNav';
 
 
 const Main = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { timerReducer: { timeRemaining } } = useSelector((state) => state)
-
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -31,30 +31,12 @@ const Main = () => {
 
   return (
     <>
+      <TopNav/>
       <AppBar />
       <Box sx={{ flexGrow: 1 }}>
-        {/* <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            // color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Quizzer
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-         
-          </Typography>
-          
-        </Toolbar>
-      </AppBar> */}
-
+      
       </Box>
-      <Box className="col-11 col-lg-8 m-auto mt-5 rounded-4" sx={{ border:2, borderColor:"#A527A8", flexGrow: 1, }}>
+      <Box className="col-12 col-lg-8 m-auto mt-2 shadow p-3 bg-light rounded-4" sx={{  flexGrow: 1, }}>
         <Box sx={{ height: 260, width: '100%', p: 2, }}>
           <CurrentQuestion />
           <QuestionOption />

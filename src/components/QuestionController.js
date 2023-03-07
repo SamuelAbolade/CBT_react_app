@@ -34,7 +34,7 @@ const QuestionController = () => {
                 ) : (
                     <KeyboardArrowLeft />
                 )}
-                Back
+                Prev
             </Button>
                 <Pagination size='small' count={maxSteps} hideNextButton hidePrevButton page={currentQuestionIndex+1} siblingCount={1} onChange={handleChange} variant="outlined" shape="rounded" />
             <Button

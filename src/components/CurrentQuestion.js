@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import {Paper, Typography} from '@mui/material';
-// import Typography from '@mui/material/Typography';
 
 const CurrentQuestion = () => {
     const {questionControllerReducer:{questions, currentQuestionIndex}} = useSelector((state)=>state)
@@ -15,8 +14,8 @@ const CurrentQuestion = () => {
                 alignItems: 'center',
                 height: 50,
                 mb: 2,
-                // bgcolor: 'background.default',
             }}
+            className="bg-light"
         >
             <Typography ><strong>{currentQuestionIndex + 1} </strong>.{questions[currentQuestionIndex].question}</Typography>
         </Paper></>

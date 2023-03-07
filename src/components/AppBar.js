@@ -10,11 +10,12 @@ const AppBar = () => {
     const seconds = Math.floor(timeRemaining % 60).toString().padStart(2, "0");
     return (
         <>
-            <div className='m-auto mt-4  text-center'>
+            <div className='m-auto mt-5 text-center'>
                 <ButtonGroup
                     disableElevation
                     variant="contained"
                     aria-label="Disabled elevation buttons"
+                    color={"primary"}
                 >
                     <Button className='p-2 px-4 rounded-0 rounded-start' color="primary"><AccessAlarmIcon /> {minutes + ":" + seconds}</Button>
                     <ConfirmSubmitDialog />

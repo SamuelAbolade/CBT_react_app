@@ -3,37 +3,38 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 // import blue from "@material-ui/core/colors";
 // import pink from "@material-ui/core/colors";
 import MainRouter from './Routes/MainRouter';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
-import { CssVarsProvider } from '@mui/joy';
+import { CssVarsProvider, ThemeProvider } from '@mui/joy';
 
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: blue,
-//     secondary: pink
-//   },
-//   status: {
-//     danger: "orange"
-//   },
-//   typography: {
-//     // Use the system font instead of the default Roboto font.
-//     fontFamily: ["calibri"].join(","),
-//     fontSize: 16
-//   },
-// });
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: purple[500],
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <MuiThemeProvider theme={theme}> */}
       <Provider store={store}>
+    {/* <MuiThemeProvider theme={theme}> */}
     {/* <CssVarsProvider>2 */}
         <MainRouter>
+    <ThemeProvider theme={theme}>
           <App />
+      </ThemeProvider>
         </MainRouter>
     {/* </CssVarsProvider>2 */}
       </Provider>
