@@ -6,21 +6,18 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const SignIn = () => {
-  const FORM_DATA = [
-    { type: "text", name: "email", placeholder: "Email / Examination Number" },
-    { type: "password", name: "password", placeholder: "Password" },
-  ];
 
   const initialValues = {
     email: '',
-    password: '',
   };
 
   const validationSchema = Yup.object({
     email: Yup.string().required('Required').min(8),
-    password: Yup.string().required('Required'),
   });
   console.log(validationSchema);
 
@@ -43,13 +40,24 @@ const SignIn = () => {
   return (
     <>
 
-      <div className='col-12 col-lg-4 bg-lig border shadow col-sm-6  rounded p-4 py-5 m-auto mt-5'>
-        <h5 className={`mt-4 text-primary`} >Sign In</h5>
-        <h6 className='mb-4' >Kindly Sign Up to get started.</h6>
-        <form className='m-auto' onSubmit={signIn}>
-          {FORM_DATA.map(({ type, name, placeholder }, i) => (
-            <Input key={i} type={type} name={name} value={formik.values.name} onChange={formik.handleChange} placeholder={placeholder} className="mt-3 rounded-2" />
-          ))}
+      <div className='col-12 col-lg-4 bg-lig border shadow col-sm-6  mt-3 rounded p-4  m-auto '>
+        <h5 className={`text-primary`} >Sign In</h5>
+        <h6 className='mb-4' >Kindly Enter your details to start Exam.</h6>
+        <form className='m-auto text-center' onSubmit={signIn}>
+            <TextField 
+            type={"email"}
+            name={"email"}
+            value={formik.values.name}
+            onChange={formik.handleChange}
+             placeholder={"Enter Reg No / Email"
+            } className="mt-3 rounded-2 col-12"
+            label="Email / Reg No"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              )}} />
           <CssVarsProvider >
             <Button type="submit" className='mt-3 w-100' variant="solid" color="primary">
               Start Exam
@@ -59,6 +67,7 @@ const SignIn = () => {
       </div>
     </>
   )
+
 }
 
 export default SignIn

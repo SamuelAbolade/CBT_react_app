@@ -11,7 +11,6 @@ import Instructions from '../components/Instructions';
 export default function HorizontalLabelPositionBelowStepper() {
   const [activeStep, setActiveStep] = React.useState(1)
   const steps = [
-    // <SignIn setActiveStep={setActiveStep}/>,
     "Instructions",
     'Sign In',
   ];
