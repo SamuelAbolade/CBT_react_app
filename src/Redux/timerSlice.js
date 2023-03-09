@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    timeRemaining: 1800, // 30 minutes in seconds
+    timeRemaining: 1200, // 30 minutes in seconds
     timerId: null,
 };
   
@@ -13,14 +13,10 @@ const initialState = {
       startTimer: (state) => {
         state.timeRemaining = state.timeRemaining-1
       },
-      // stopTimer: (state) => {
-      //   clearInterval(state.timerId);
-      //   state.timerId = null;
-      // },
+
       resetTimer: (state) => {
-        // clearInterval(state.timerId);
         state.timerId = null;
-        state.timeRemaining = 1800;
+        state.timeRemaining = 1200;
       },
     },
   });
