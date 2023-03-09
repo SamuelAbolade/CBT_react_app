@@ -14,6 +14,7 @@ const Main = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { timerReducer: { timeRemaining } } = useSelector((state) => state)
+  // const [left, setLeft] = useState(false)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -22,12 +23,14 @@ const Main = () => {
     return () => {
       clearInterval(intervalId)
       dispatch(resetTimer())
+      // setLeft(true)
     };
   }, [dispatch]);
 
   useEffect(() => {
     timeRemaining < 1 && navigate("/Submit")
   }, [timeRemaining])
+
 
   return (
     <>

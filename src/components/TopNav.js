@@ -39,7 +39,7 @@ const TopNav = () => {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant="h6"
                         noWrap
@@ -55,7 +55,7 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        QUIZZER
+                        BRAIN-BOOST
                     </Typography>
 
                     <Typography
@@ -74,7 +74,7 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        QUIZZER
+                        BRAIN-BOOST
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {/* {pages.map((page) => (
@@ -91,7 +91,7 @@ const TopNav = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="User">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                             </IconButton>
                         </Tooltip>
                         <Menu
