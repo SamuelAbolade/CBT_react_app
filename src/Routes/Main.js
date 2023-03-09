@@ -46,6 +46,9 @@ const Main = () => {
         </Box>
           <Box className=""><QuestionController /></Box>
       </Box>
+      <div className="attribution">
+          <p>Coded by <a href="https://github.com/techie-sam" target="_blank">Techie Sam</a></p>
+        </div>
     </>
   )
 }

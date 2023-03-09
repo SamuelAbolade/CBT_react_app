@@ -35,7 +35,7 @@ export default function ConfirmSubmitDialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Are you sure to submit"}
+          {"Are you sure to submit?"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
