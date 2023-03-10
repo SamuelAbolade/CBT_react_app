@@ -1,4 +1,3 @@
-import { QuestionMarkSharp } from '@mui/icons-material';
 import { Button, CssVarsProvider } from '@mui/joy';
 import React from 'react';
 import { useSelector } from 'react-redux';

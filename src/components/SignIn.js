@@ -1,6 +1,4 @@
 import React from 'react';
-import questions from '../questions';
-import { Input } from '@mui/joy';
 import Button from '@mui/joy/Button';
 import { CssVarsProvider } from '@mui/joy/styles';
 import { useFormik } from 'formik';

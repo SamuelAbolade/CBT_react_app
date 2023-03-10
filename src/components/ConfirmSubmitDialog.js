@@ -44,9 +44,7 @@ export default function ConfirmSubmitDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit} autoFocus>
-            SUBMIT
-          </Button>
+          <Button onClick={handleSubmit} autoFocus>SUBMIT</Button>
         </DialogActions>
       </Dialog>
     </div>
