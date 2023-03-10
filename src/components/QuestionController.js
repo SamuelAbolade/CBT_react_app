@@ -7,7 +7,6 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleNext, handleBack, handlePaginationChange } from '../Redux/questionControllerSlice';
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 
 
 const QuestionController = () => {
@@ -36,7 +35,7 @@ const QuestionController = () => {
                 )}
                 Prev
             </Button>
-                <Pagination size='small' count={maxSteps} hideNextButton hidePrevButton page={currentQuestionIndex+1} siblingCount={1} onChange={handleChange} variant="outlined" shape="rounded" />
+                <Pagination size='small' className='' count={maxSteps} hideNextButton hidePrevButton page={currentQuestionIndex+1} siblingCount={1} onChange={handleChange} variant="outlined" shape="rounded" />
             <Button
                 size="small"
                 onClick={next}

@@ -17,7 +17,7 @@ const CurrentQuestion = () => {
             }}
             className="bg-light"
         >
-            <Typography ><strong>{currentQuestionIndex + 1} </strong>.{questions[currentQuestionIndex].question}</Typography>
+            <Typography ><strong>{currentQuestionIndex + 1} </strong>.{ questions[currentQuestionIndex].question }</Typography>
         </Paper></>
     )
 }

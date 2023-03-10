@@ -19,7 +19,6 @@ const SignIn = () => {
   const validationSchema = Yup.object({
     email: Yup.string().required('Required').min(8),
   });
-  console.log(validationSchema);
 
   const formik = useFormik({
     initialValues,
@@ -31,9 +30,7 @@ const SignIn = () => {
   const signIn = (e) => {
     e.preventDefault();
     if (formik.isValid && formik.dirty) {
-      navigate("/MainApp")
-    } else {
-      console.log("Go back");
+      navigate("/app")
     }
   }
 
@@ -41,15 +38,15 @@ const SignIn = () => {
     <>
 
       <div className='col-12 col-lg-4 bg-lig border shadow col-sm-6  mt-3 rounded p-4  m-auto '>
-        <h5 className={`text-primary`} >Sign In</h5>
-        <h6 className='mb-4' >Kindly Enter your details to start Exam.</h6>
+        <h5 className={`text-primary mb-4`} >Enter Login</h5>
+        <h6 className='mb-2' >Kindly enter your details to Start.</h6>
         <form className='m-auto text-center' onSubmit={signIn}>
-            <TextField 
+          <TextField
             type={"email"}
             name={"email"}
             value={formik.values.name}
             onChange={formik.handleChange}
-             placeholder={"Enter Reg No / Email"
+            placeholder={"Enter Reg No / Email"
             } className="mt-3 rounded-2 col-12"
             label="Email / Reg No"
             InputProps={{
@@ -57,13 +54,17 @@ const SignIn = () => {
                 <InputAdornment position="start">
                   <AccountCircle />
                 </InputAdornment>
-              )}} />
+              )
+            }} />
           <CssVarsProvider >
             <Button type="submit" className='mt-3 w-100' variant="solid" color="primary">
               Start Exam
             </Button>
           </CssVarsProvider>
         </form>
+        <div className="attribution">
+          <p>Coded by <a href="https://github.com/techie-sam" target="_blank">Techie Sam</a></p>
+        </div>
       </div>
     </>
   )
