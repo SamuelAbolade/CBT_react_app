@@ -10,7 +10,7 @@ import { purple } from '@mui/material/colors';
 import MainRouter from './Routes/MainRouter';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
-import { CssVarsProvider, ThemeProvider } from '@mui/joy';
+import { ThemeProvider } from '@mui/joy';
 
 const theme = createTheme({
   palette: {
@@ -28,17 +28,13 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Provider store={store}>
-    {/* <MuiThemeProvider theme={theme}> */}
-    {/* <CssVarsProvider>2 */}
-        <MainRouter>
-    <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <MainRouter>
+        <ThemeProvider theme={theme}>
           <App />
-      </ThemeProvider>
-        </MainRouter>
-    {/* </CssVarsProvider>2 */}
-      </Provider>
-    {/* </MuiThemeProvider> */}
+        </ThemeProvider>
+      </MainRouter>
+    </Provider>
   </React.StrictMode>
 );
 

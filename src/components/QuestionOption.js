@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import FormControl from '@mui/joy/FormControl';
 import Radio from '@mui/joy/Radio';
 import RadioGroup from '@mui/joy/RadioGroup';

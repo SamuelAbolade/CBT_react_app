@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
 import { Button, CssVarsProvider } from '@mui/joy';
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -18,7 +20,7 @@ const Instructions = ({ setActiveStep }) => {
                     </div>
                 </CssVarsProvider>
                 <div className="attribution">
-                    <p>Coded by <a href="https://github.com/techie-sam" target="_blank">Techie Sam</a></p>
+                    <p>Coded by <a href="https://github.com/techie-sam" target="_blank" rel="noreferrer">Techie Sam</a></p>
                 </div>
             </div>
         </>

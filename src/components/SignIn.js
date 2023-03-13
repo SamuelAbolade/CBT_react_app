@@ -61,7 +61,7 @@ const SignIn = () => {
           </CssVarsProvider>
         </form>
         <div className="attribution">
-          <p>Coded by <a href="https://github.com/techie-sam" target="_blank">Techie Sam</a></p>
+          <p>Coded by <a href="https://github.com/techie-sam" target="_blank" rel="noreferrer">Techie Sam</a></p>
         </div>
       </div>
     </>

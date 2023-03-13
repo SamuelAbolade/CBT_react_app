@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetTimer, startTimer, } from '../Redux/timerSlice';
@@ -14,7 +14,6 @@ const Main = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { timerReducer: { timeRemaining } } = useSelector((state) => state)
-  // const [left, setLeft] = useState(false)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -23,7 +22,6 @@ const Main = () => {
     return () => {
       clearInterval(intervalId)
       dispatch(resetTimer())
-      // setLeft(true)
     };
   }, [dispatch]);
 
@@ -47,7 +45,7 @@ const Main = () => {
         <QuestionController />
       </Box>
       <div className="attribution">
-        <p>Coded by <a href="https://github.com/techie-sam" target="_blank">Techie Sam</a></p>
+        <p>Coded by <a href="https://github.com/techie-sam" target="_blank" rel="noreferrer">Techie Sam</a></p>
       </div>
     </>
   )
