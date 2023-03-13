@@ -1,5 +1,4 @@
 import React from 'react'
-import MobileStepper from '@mui/material/MobileStepper';
 import Button from '@mui/material/Button'
 import { useTheme } from '@mui/material/styles';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -11,7 +10,7 @@ import Pagination from '@mui/material/Pagination';
 
 const QuestionController = () => {
     const dispatch = useDispatch()
-    const { optionReducer: { selectedOptions }, questionControllerReducer: { questions, currentQuestionIndex } } = useSelector((state) => (state));
+    const { questionControllerReducer: { questions, currentQuestionIndex } } = useSelector((state) => (state));
     const maxSteps = questions.length
     const theme = useTheme()
 

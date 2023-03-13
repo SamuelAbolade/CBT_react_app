@@ -12,12 +12,14 @@ import Button from '@mui/joy/Button';
 import { CssVarsProvider } from '@mui/joy/styles';
 import '../App.css';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function CustomizedTables() {
   const { optionReducer: { selectedOptions }, questionControllerReducer: { questions } } = useSelector((state) => state)
   const correctOptions = selectedOptions.filter((option, i) => questions[i].answer === option)
-  const attempted = selectedOptions.filter((option, i) => option)
+  const attempted = selectedOptions.filter(option => option)
+  const navigate = useNavigate()
 
   return (
     <main className='m-auto mt-5'>
@@ -28,7 +30,7 @@ export default function CustomizedTables() {
           <div className="your-score">{correctOptions.length}</div>
           <div className="total-score">of {questions.length}</div>
         </div>
-        {correctOptions.length > 35 ? <p>Well done, You scored higher than 75%.</p> :<p>You score. Don't give up!!</p>}
+        {correctOptions.length > 35 ? <p>Well done, You scored higher than 75%.</p> :<p>You score. Dont give up!!</p>}
       </section>
 
       <section className="summary">
@@ -65,11 +67,11 @@ export default function CustomizedTables() {
         </div>
 
         <CssVarsProvider>
-          <a href="answers">
-            <Button type="submit" className='mt-3 w-100' variant="solid" color="primary">
+          
+            <Button type="submit" className='mt-3 w-100' variant="solid" color="primary" onClick={()=>navigate("/answers")}>
               VIEW ALL ANSWERS
             </Button>
-          </a>
+          
           <a href="/">
             <Button type="submit" className='mt-3 w-100' variant="solid" color="primary">
               LEAVE
@@ -78,7 +80,7 @@ export default function CustomizedTables() {
         </CssVarsProvider>
 
         <div className="attribution">
-          <p>Coded by <a href="https://github.com/techie-sam" target="_blank">Techie Sam</a></p>
+          <p>Coded by <a href="https://github.com/techie-sam" target="_blank" rel="noopener noreferrer">Techie Sam</a></p>
         </div>
       </section>
     </main>
