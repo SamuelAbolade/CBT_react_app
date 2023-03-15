@@ -5,7 +5,6 @@ import { resetTimer, startTimer, } from './Redux/timerSlice';
 import { useNavigate } from 'react-router-dom';
 import AppBar from './components/AppBar';
 import QuestionController from './components/QuestionController';
-import TopNav from './components/TopNav';
 import CurrentQuestionAndAnswer from './components/CurrentQuestionAndOption';
 
 
@@ -31,7 +30,6 @@ const Main = () => {
 
   return (
     <>
-      <TopNav />
       <AppBar />
       <Box sx={{ flexGrow: 1 }}>
 
