@@ -17,7 +17,7 @@ const AppBar = () => {
                     aria-label="Disabled elevation buttons"
                     color={"primary"}
                 >
-                    <Button className='p-2 px-4 rounded-0 rounded-start' color="primary"><AccessAlarmIcon /> {minutes + ":" + seconds}</Button>
+                    <Button className={`p-2 px-4 rounded-0 rounded-start ${minutes < 5 && "bg-danger"}`} color="primary"><AccessAlarmIcon /> {minutes + ":" + seconds}</Button>
                     <ConfirmSubmitDialog />
                 </ButtonGroup>
             </div>
