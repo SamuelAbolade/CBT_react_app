@@ -134,7 +134,7 @@ section.result {
 }
 
 .attribution { 
-    font-size: 11px; 
+    font-size: 13px; 
     text-align: center; 
     margin-top: 1rem;
 }
@@ -144,9 +144,9 @@ section.result {
     text-decoration: none;
 }
 
-.attribution a:hover {
-    font-size: larger;
-}
+/* .attribution a:hover {
+    font-size: 20px;
+} */
 
 @media screen and (min-width:47.5rem) {
     main {
