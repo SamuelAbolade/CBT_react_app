@@ -23,7 +23,7 @@ export default function CustomizedTables() {
   const navigate = useNavigate()
 
   return (
-    <main className='m-auto mt-5'>
+    <main className='m-auto mt-5 mb-5'>
       <section className="result">
         <h1>Your Result</h1>
 
@@ -79,10 +79,6 @@ export default function CustomizedTables() {
             </Button>
           </a>
         </CssVarsProvider>
-
-        <div className="attribution">
-          <p>Coded by <a href="https://github.com/techie-sam" target="_blank" rel="noopener noreferrer">Techie Sam</a></p>
-        </div>
       </section>
     </main>
   );
