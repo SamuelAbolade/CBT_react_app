@@ -36,13 +36,10 @@ const Main = () => {
       </Box>
       <Box className="col-12 col-sm-10 col-lg-8 m-auto mt-2 shadow p-3 bg-light rounded-4 border" sx={{ flexGrow: 1, }}>
         <Box sx={{ height: 260, width: '100%', p: 2, }}>
-          <CurrentQuestionAndAnswer/>
+          <CurrentQuestionAndAnswer />
         </Box>
         <QuestionController />
       </Box>
-      <div className="attribution">
-        <p>Coded by <a href="https://github.com/techie-sam" target="_blank" rel="noreferrer">Techie Sam</a></p>
-      </div>
     </>
   )
 }

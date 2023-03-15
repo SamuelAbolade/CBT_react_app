@@ -6,6 +6,7 @@ import Submit from "./Submit";
 import Answers from "./Answers";
 import Error404 from "./Error404";
 import TopNav from "../components/TopNav";
+import ContactLink from "../components/ContactLink";
 
 const MainRouter = () => {
   return (
@@ -20,6 +21,7 @@ const MainRouter = () => {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
+      <ContactLink/>
     </>
   )
 }
