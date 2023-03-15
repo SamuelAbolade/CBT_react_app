@@ -1,14 +1,22 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const Answers = () => {
     const { optionReducer: { selectedOptions }, questionControllerReducer: { questions } } = useSelector((state) => (state));
-    // console.log(selectedOptions)
-    // console.log(questions[3]["A"])
 
     return (
         <>
-            <div>
+            <div className='mt-2'>
+                <Stack spacing={1} alignItems="center">
+                    <Stack direction="row" spacing={1}>
+                        <Chip icon={<CheckCircleIcon />} label="Correct Option" color="success" />
+                    <Chip icon={<CancelIcon/>} label="Your wrong Option" className="bg-danger text-light" color='warning'  />
+                    </Stack>
+                </Stack>
                 {questions.map(({ question, answer }, i) =>
                     <div className='mt-3 bg-light p-3 col-lg-8 m-auto border border-2 rounded' key={i}>
                         <div><strong>{i + 1}.</strong> {question}</div>

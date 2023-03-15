@@ -30,7 +30,7 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        BRAIN-BOOST
+                        <img src='..\public\logo.png'/>
                     </Typography>
 
                     <Typography

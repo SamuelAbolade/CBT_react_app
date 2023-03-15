@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import * as React from 'react';
 // import { styled } from '@mui/material/styles';
 // import Table from '@mui/material/Table';
@@ -30,7 +31,7 @@ export default function CustomizedTables() {
           <div className="your-score">{correctOptions.length}</div>
           <div className="total-score">of {questions.length}</div>
         </div>
-        {correctOptions.length > 35 ? <p>Well done, You scored higher than 75%.</p> :<p>You score. Dont give up!!</p>}
+        {correctOptions.length > 35 ? <p>Well done, You scored higher than 75%.</p> :<p>You scored less than 75%, Don't give up!!</p>}
       </section>
 
       <section className="summary">
