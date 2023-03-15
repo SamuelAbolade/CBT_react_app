@@ -8,8 +8,6 @@ import Menu from '@mui/material/Menu';
 import { Container } from '@mui/system';
 
 const TopNav = () => {
-
-
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -30,7 +28,7 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        <img src='..\public\logo.png'/>
+                        <img src='../../public/logo192.png' alt="Quizlet" />
                     </Typography>
 
                     <Typography
@@ -49,13 +47,13 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        BRAIN-BOOST
+                        <img src='../../public/logo.png' alt="Quizlet" />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                            <IconButton sx={{ p: 0 }}>
-                            </IconButton>
+                        <IconButton sx={{ p: 0 }}>
+                        </IconButton>
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"

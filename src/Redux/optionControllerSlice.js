@@ -11,12 +11,9 @@ export const optionSlice = createSlice({
     reducers:{
         toggleChoice: (state, action) => {
             state.chosenOption = action.payload
-            console.log(state.chosenOption);
         },
         pushToUserAnswers: (state, action)=>{
             state.selectedOptions[action.payload] = state.chosenOption
-            console.log(state.selectedOptions)
-            console.log(action)
         },
         resetSelectedOptions: (state)=>{
             (state.selectedOptions) = Array(questions.length).fill(null)

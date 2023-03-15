@@ -1,12 +1,12 @@
 import React from 'react'
 import CurrentQuestion from './CurrentQuestion'
-import QuestionOption from './CurrentQuestionOption'
+import CurrentQuestionOption from './CurrentQuestionOption'
 
 const CurrentQuestionAndAnswer = () => {
   return (
     <>
         <CurrentQuestion />
-        <QuestionOption />
+        <CurrentQuestionOption />
     </>
   )
 }

@@ -19,7 +19,6 @@ const questionControllerSlice = createSlice({
         },
         handlePaginationChange: (state, action) => {
             state.currentQuestionIndex = action.payload
-            // setPage(value);
         }
     }
 })

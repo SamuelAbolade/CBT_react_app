@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetTimer, startTimer, } from '../Redux/timerSlice';
+import { resetTimer, startTimer, } from './Redux/timerSlice';
 import { useNavigate } from 'react-router-dom';
-import AppBar from '../components/AppBar';
-import QuestionController from '../components/QuestionController';
-import TopNav from '../components/TopNav';
-import CurrentQuestionAndAnswer from '../components/CurrentQuestionAndAnswer';
+import AppBar from './components/AppBar';
+import QuestionController from './components/QuestionController';
+import TopNav from './components/TopNav';
+import CurrentQuestionAndAnswer from './components/CurrentQuestionAndOption';
 
 
 const Main = () => {

@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 import { createTheme } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
-// import blue from "@material-ui/core/colors";
-// import pink from "@material-ui/core/colors";
 import MainRouter from './Routes/MainRouter';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
@@ -29,7 +27,7 @@ root.render(
     <Provider store={store}>
       <MainRouter>
         <ThemeProvider theme={theme}>
-          <App />
+          <Main />
         </ThemeProvider>
       </MainRouter>
     </Provider>

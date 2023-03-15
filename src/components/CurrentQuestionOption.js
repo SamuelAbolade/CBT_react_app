@@ -9,7 +9,7 @@ import { pushToUserAnswers, toggleChoice } from '../Redux/optionControllerSlice'
 
 
 
-const QuestionOption = () => {
+const CurrentQuestionOption = () => {
   const dispatch = useDispatch();
   const { optionReducer: { selectedOptions }, questionControllerReducer: { questions, currentQuestionIndex } } = useSelector((state) => (state));
 
@@ -44,4 +44,4 @@ const QuestionOption = () => {
   );
 }
 
-export default QuestionOption;
+export default CurrentQuestionOption;
