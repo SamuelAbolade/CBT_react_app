@@ -6,13 +6,17 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import { Container } from '@mui/system';
+import logo1 from '../assets/logo.png'
 
+const logoStyle = {
+    width: "120px",
+    height:"45px"
+}
 const TopNav = () => {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant="h6"
                         noWrap
@@ -28,9 +32,9 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        <img src='../../public/logo192.png' alt="Quizlet" />
-                    </Typography>
 
+                        <img src={logo1} style={logoStyle}  alt="Quizlet" />
+                    </Typography>
                     <Typography
                         variant="h5"
                         noWrap
@@ -47,7 +51,8 @@ const TopNav = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        <img src='../../public/logo.png' alt="Quizlet" />
+                        <img src={logo1} style={logoStyle} alt="Quizlet" />
+                        
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
 

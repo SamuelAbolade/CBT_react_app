@@ -1,4 +1,6 @@
-[
+import { shuffle } from "lodash"
+
+const questions = [
     {
         "question": "A flashing red traffic light signifies that a driver should do what?",
         "A": "stop",
@@ -400,3 +402,6 @@
         "answer": "C"
       }
 ]
+const shuffledQuestion = shuffle(questions)
+
+export default shuffledQuestion

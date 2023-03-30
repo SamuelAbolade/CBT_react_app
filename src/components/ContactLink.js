@@ -11,7 +11,7 @@ const ContactLink = () => {
                         Coded by<a href="https://github.com/techie-sam" className="attribution fw-bolder" target="_blank" rel="noreferrer"> Techie_Sam</a>
                     </p>
                     <p>
-                        <a href="https://linkedin.com/techie-sam" className='mx-2 attribution' target="_blank" rel="noreferrer"><LinkedInIcon className='fs-5' /></a>
+                        <a href="https://linkedin.com/in/techie-sam" className='mx-2 attribution' target="_blank" rel="noreferrer"><LinkedInIcon className='fs-5' /></a>
                         <a href="https://twitter.com/techie_sam" target="_blank" rel="noreferrer"><TwitterIcon className='fs-5' /></a>
                     </p>
                 </div>
