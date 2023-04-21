@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import "./App.css"
 import Box from '@mui/material/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetTimer, startTimer, } from './Redux/timerSlice';
@@ -23,13 +24,39 @@ const Main = () => {
     };
   }, [dispatch]);
 
+
+  // function ExamForm() {
+    useEffect(() => {
+      const handleCopy = (e) => {
+        e.preventDefault();
+        window.getSelection().removeAllRanges();
+        alert('Copying is not allowed on this page');
+      }
+  
+      const handleBeforeUnload = (e) => {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+      
+      document.addEventListener('copy', handleCopy);
+      window.addEventListener('beforeunload', handleBeforeUnload);
+      
+      return () => {
+        document.removeEventListener('copy', handleCopy);
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+      };
+    }, []);
+  
+  // }
+  
+
   useEffect(() => {
     timeRemaining < 1 && navigate("/Submit")
   }, [timeRemaining])
 
 
   return (
-    <>
+    <div>
       <AppBar />
       <Box sx={{ flexGrow: 1 }}>
       </Box>
@@ -39,7 +66,7 @@ const Main = () => {
         </Box>
         <QuestionController />
       </Box>
-    </>
+    </div>
   )
 }
 

@@ -27,19 +27,20 @@ const CurrentQuestionOption = () => {
   };
 
   return (
+  
     <FormControl variant="standard">
       <FormLabel></FormLabel>
-        <RadioGroup
-          name="question-option"
-          value={selectedOptions[currentQuestionIndex]}
-          aria-labelledby="options"
-          onChange={handleChange}
-          sx={{ my: 1 }}
-        >
-          {OPTION_DATA.map(({ value, option, optionLabel }) =>
-            <FormControlLabel key={value} sx={{}} control={<Radio />} value={option} label={optionLabel} />
-          )}
-        </RadioGroup>
+      <RadioGroup
+        name="question-option"
+        value={selectedOptions[currentQuestionIndex]}
+        aria-labelledby="options"
+        onChange={handleChange}
+        sx={{ my: 1 }}
+      >
+        {OPTION_DATA.map(({ value, option, optionLabel }) =>
+          <FormControlLabel key={value} sx={{}} control={<Radio />} value={option} label={optionLabel} />
+        )}
+      </RadioGroup>
     </FormControl>
   );
 }

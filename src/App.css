@@ -1,3 +1,13 @@
+#unselectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:none;
+
+    /* color: #cc0000; */
+  }
 main {
     width: min(90%, 23.4375rem);
     box-sizing: border-box;
