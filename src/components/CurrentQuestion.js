@@ -1,14 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {Paper, Typography} from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import '../App.css'
 
 const CurrentQuestion = () => {
-    const {questionControllerReducer:{questions, currentQuestionIndex}} = useSelector((state)=>state)
+    const { questionControllerReducer: { questions, currentQuestionIndex } } = useSelector((state) => state)
     return (
-        <div id="unselectable">        
-        <Paper 
-        
+        <Paper
             square
             elevation={0}
             sx={{
@@ -19,8 +17,9 @@ const CurrentQuestion = () => {
             }}
             className="bg-light"
         >
-            <Typography ><strong  >{currentQuestionIndex + 1} </strong>.{ questions[currentQuestionIndex].question }</Typography>
-        </Paper></div>
+            <Typography ><strong  >{currentQuestionIndex + 1} </strong>.{questions[currentQuestionIndex].question}</Typography>
+        </Paper>
+
     )
 }
 
