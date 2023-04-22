@@ -8,7 +8,14 @@ const ContactLink = () => {
             <div className="attribution">
                 <span>
                     <p className='m-auto'>
-                        Coded by<a href="https://github.com/techie-sam" className="attribution fw-bolder" target="_blank" rel="noreferrer"> Techie_Sam<a href="https://linkedin.com/in/techie-sam" className='mx-2 attribution' target="_blank" rel="noreferrer"><LinkedInIcon className='fs-5' /></a><a href="https://twitter.com/techie_sam" target="_blank" rel="noreferrer"><TwitterIcon className='fs-5' /></a></a>
+                        Coded by
+                        <a href="https://github.com/techie-sam" className="attribution fw-bolder" target="_blank" rel="noreferrer"> Techie_Sam</a>
+                        <a href="https://linkedin.com/in/techie-sam" className='mx-2 attribution' target="_blank" rel="noreferrer">
+                            <LinkedInIcon className='fs-5' />
+                        </a>
+                        <a href="https://twitter.com/techie_sam" target="_blank" rel="noreferrer">
+                            <TwitterIcon className='fs-5' />
+                        </a>
                     </p>
                 </span>
             </div>
