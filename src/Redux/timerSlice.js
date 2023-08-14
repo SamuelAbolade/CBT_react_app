@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    timeRemaining: 1200, // 30 minutes in seconds
+    timeRemaining: 1200, 
     timerId: null,
 };
   
@@ -23,5 +23,3 @@ const initialState = {
   
   export default timerSlice.reducer;
   export const { startTimer, stopTimer, resetTimer } = timerSlice.actions;
-  
-  

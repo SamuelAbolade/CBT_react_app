@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from 'react'
-import Main from "../Main";
+import React from "react";
+import App from "../App";
 import Welcome from "./Welcome";
 import Submit from "./Submit";
 import Answers from "./Answers";
@@ -15,15 +15,15 @@ const MainRouter = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
-          <Route path="/app" element={<Main />} />
+          <Route path="/app" element={<App />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/answers" element={<Answers />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
-      <ContactLink/>
+      <ContactLink />
     </>
-  )
-}
+  );
+};
 
-export default MainRouter
+export default MainRouter;
